@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hair Impression</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      background: #fff0f6;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      font-family: 'Brush Script MT', cursive;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #ff69b4;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f2f2f2;
+    }
+    .pricing ul li span {
+      float: right;
+      font-weight: bold;
+      color: #ff1493;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #ff69b4;
+      color: white;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      margin-top: 3rem;
+    }
+    a {
+      color: #ff1493;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    form input, form textarea, form button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+    form button {
+      background: #ff69b4;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background: #ff1493;
+    }
+      /* Advertisement styles */
+    .ad-banner {
+      background: radial-gradient(1200px 400px at 10% 0%, #ffe0ea 0%, rgba(255,255,255,0) 60%),
+                  radial-gradient(1200px 400px at 90% 0%, #ffd1e1 0%, rgba(255,255,255,0) 60%),
+                  linear-gradient(135deg, #ffc1d9, #ff9ac2);
+      color: #4a2d3b;
+      padding: 2.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .ad-wrap { max-width: 1000px; margin: 0 auto; }
+    .ad-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      background: rgba(255,255,255,0.6);
+      color: #7a3a57;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      margin-bottom: 0.8rem;
+      backdrop-filter: blur(4px);
+    }
+    .ad-title {
+      margin: 0.2rem 0 0.5rem;
+      font-size: 2.2rem;
+      color: #7a294f;
+    }
+    .ad-sub {
+      margin: 0 auto 1rem;
+      max-width: 750px;
+    }
+    .ad-highlights {
+      list-style: none; padding: 0; margin: 1rem auto 1.3rem; max-width: 520px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 0.6rem 1rem;
+    }
+    .ad-highlights li { background: rgba(255,255,255,0.8); padding: 0.7rem 0.9rem; border-radius: 12px; }
+    .ad-ctas { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .btn { text-decoration: none; padding: 0.9rem 1.1rem; border-radius: 999px; font-weight: 700; border: 2px solid #ff4d9a; }
+    .btn-primary { background: #ff4d9a; color: white; }
+    .btn-primary:hover { background: #ff2f89; }
+    .btn-outline { background: transparent; color: #7a294f; }
+    .btn-outline:hover { background: rgba(255,255,255,0.8); }
+    .ad-note { font-size: 0.95rem; opacity: 0.9; margin-top: 0.9rem; }
+
+    /* Floating hearts */
+    .ad-banner::before, .ad-banner::after {
+      content: "❤";
+      position: absolute;
+      font-size: 2.2rem;
+      opacity: 0.18;
+      animation: float 7s ease-in-out infinite;
+      color: #7a294f;
+    }
+    .ad-banner::before { left: 8%; top: 10%; animation-delay: 0s; }
+    .ad-banner::after { right: 10%; bottom: 8%; animation-delay: 2.5s; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hair Impression</h1>
+    <p>Your beauty, our passion ✨</p>
+  </header>
+
+  <!-- Advertisement Banner -->
+  <section class="ad-banner">
+    <div class="ad-wrap">
+      <div class="ad-badge">GIRLY • MODERN • CHIC</div>
+      <h2 class="ad-title">Turn Heads This Week 💖</h2>
+      <p class="ad-sub">Book your glam at <strong>Hair Impression</strong> — open <strong>Mon–Fri 08:00–16:00</strong> and <strong>Sat–Sun 08:00–15:00</strong>.</p>
+      <ul class="ad-highlights">
+        <li>✨ Basic Installation — <strong>R600</strong></li>
+        <li>🎀 Customisation — <strong>R300</strong></li>
+        <li>💅 Style — <strong>R450</strong></li>
+      </ul>
+      <div class="ad-ctas">
+        <a class="btn btn-primary" href="#booking">Book Online</a>
+        <a class="btn btn-outline" href="https://wa.me/27718002015" target="_blank" rel="noreferrer">Book on WhatsApp</a>
+      </div>
+      <p class="ad-note">Friendly stylists • Fast service • Flawless finishes</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="card">
+      <h2>Operating Hours</h2>
+      <ul>
+        <li>Mon – Fri: 08:00 – 16:00</li>
+        <li>Sat – Sun: 08:00 – 15:00</li>
+      </ul>
+    </div>
+
+    <div class="card pricing">
+      <h2>Pricing</h2>
+      <ul>
+        <li>Basic Installation <span>R600</span></li>
+        <li>Customization <span>R300</span></li>
+        <li>Style <span>R450</span></li>
+      </ul>
+    </div>
+
+    <div class="card" id="booking">
+      <h2>Make Bookings</h2>
+      <form action="mailto:luyandanzuza23@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <input type="email" name="Email" placeholder="Your Email" required>
+        <input type="tel" name="Phone" placeholder="Your Phone Number" required>
+        <textarea name="Details" placeholder="Service & Preferred Time" rows="4" required></textarea>
+        <button type="submit">Submit Booking</button>
+      </form>
+      <p style="font-size:0.9rem; color:#666;">Submitting this form will open your email client to send your booking request.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Hair Impression. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
